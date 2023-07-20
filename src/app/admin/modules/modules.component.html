@@ -1,0 +1,79 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 class="h2 ps-1 page-title"><strong>Modules</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="modulesdata" (ngSubmit)="save(modulesdata.value)">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">Department<span class="text-danger">*</span></label>
+          <span *ngIf="modulesdata.controls.department.touched && modulesdata.controls.department.invalid" class="text-danger small">Please Enter Department</span>
+          <input type="text" class="form-control" formControlName="department">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Description<span class="text-danger">*</span></label>
+          <span *ngIf="modulesdata.controls.description.touched && modulesdata.controls.description.invalid" class="text-danger small">Please Enter Department</span>
+          <input type="text" class="form-control" formControlName="description"/>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Select Image</label>
+        <input class="form-control" formControlName="selectimage" type="file">
+    </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Landing Page<span class="text-danger">*</span></label>
+          <span *ngIf="modulesdata.controls.landingpage.touched && modulesdata.controls.landingpage.invalid" class="text-danger small">Please Enter Department</span>
+          <input type="text" class="form-control" formControlName="landingpage" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Sr No<span class="text-danger">*</span></label>
+          <span *ngIf="modulesdata.controls.srno.touched && modulesdata.controls.srno.invalid" class="text-danger small">Please Enter Department</span>
+          <input type="text" class="form-control" formControlName="srno" />
+        </div>
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!modulesdata.valid">Save</button>
+          <a class="btn btn-danger ms-2" routerLink="/admin/modules">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-2 p-3 bg-white">
+    <div class="col-md-12">
+      <div>
+        <button class="btn btn-danger">Clean Database</button>
+        <input type="search" class="form-control" placeholder="search">
+        <br>
+      </div>
+      <table class="table table-bordered table-hover border-dark shadow-lg p-3 mb-5 table text-center">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Sr.No</th>
+            <th>Departments</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Landing Page</th>
+          </tr>
+        </thead>
+        <tbody class="table-white">
+          <tr *ngFor="let module of modules; let i = index;">
+            <td>
+              <button class="btn btn-success" (click)="edit(module.id)"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-danger ms-2" (click)="delete(module.id)"><i class="fa fa-trash"></i></button>
+            </td>
+            <td>{{ i + 1}}</td>
+            <td>{{module.department}}</td>
+            <td>{{module.description}}</td>
+            <td>{{module.selectimage}}</td>
+            <td>{{module.landingpage}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+

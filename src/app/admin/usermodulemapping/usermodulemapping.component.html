@@ -1,0 +1,76 @@
+<nav class="navbar navbar-light bg-light m-2">
+  <h1 class="h2 ps-1 page-title"><strong>USER-MODULES MAPPING</strong></h1>
+</nav>
+<main class="content">
+  <div class="row p-3 bg-white">
+    <form [formGroup]="userdata" (ngSubmit)="save(userdata.value)">
+      <div class="row g-3">
+        <div class="col-md-12">
+          <select for="inputText" class="select2 form-control" formControlName="selectoptions" style="width: 300px;" name="" id="">
+            <option input type="text" class="form-control"  value="aidmos admin-demo retailer">Aidmos Admin-Demo Retailer</option>
+            <option input type="text" class="form-control"  value="demo retailer-demo retailer">Demo Retailer -Demo Retailer</option>
+          </select>
+          <br><br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            Company
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+           Masters
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+           Vouchers
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+           Reports
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+           Accounting Reports
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+           GST Reports
+          </div>
+          <br>
+          <div class="col-lg-12">
+            <label class="switch">
+              <input type="checkbox" checked >
+              <span class="slider round"></span>
+            </label>
+            Logout
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+</main>
+
